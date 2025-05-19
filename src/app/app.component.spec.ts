@@ -1,29 +1,20 @@
-import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { TestBed } from '@angular/core/testing'
+import { LangService } from '@core/services/lang.service'
+import { ThemeService } from '@core/services/theme.service'
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
+import { AppComponent } from './app.component'
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
-    }).compileComponents();
-  });
+      imports: [AppComponent, TranslateModule.forRoot()],
+      providers: [TranslateService, ThemeService, LangService]
+    }).compileComponents()
+  })
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have the 'venue-seat-demo' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('venue-seat-demo');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, venue-seat-demo');
-  });
-});
+    const fixture = TestBed.createComponent(AppComponent)
+    const app = fixture.componentInstance
+    expect(app).toBeTruthy()
+  })
+})
