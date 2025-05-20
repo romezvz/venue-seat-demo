@@ -1,0 +1,33 @@
+[
+  { "id": "A1", "eventId": 1, "sector": "A", "price": 50, "available": true },
+  { "id": "A2", "eventId": 1, "sector": "A", "price": 50, "available": false },
+  { "id": "A3", "eventId": 1, "sector": "A", "price": 50, "available": true },
+  { "id": "A4", "eventId": 1, "sector": "A", "price": 50, "available": true },
+  { "id": "B1", "eventId": 1, "sector": "B", "price": 40, "available": true },
+  { "id": "B2", "eventId": 1, "sector": "B", "price": 40, "available": false },
+  { "id": "B3", "eventId": 1, "sector": "B", "price": 40, "available": true },
+  { "id": "C1", "eventId": 1, "sector": "C", "price": 30, "available": false },
+  { "id": "C2", "eventId": 1, "sector": "C", "price": 30, "available": true },
+
+  { "id": "VIP1", "eventId": 2, "sector": "VIP", "price": 120, "available": false },
+  { "id": "VIP2", "eventId": 2, "sector": "VIP", "price": 120, "available": true },
+  { "id": "D1", "eventId": 2, "sector": "D", "price": 60, "available": true },
+  { "id": "D2", "eventId": 2, "sector": "D", "price": 60, "available": true },
+  { "id": "E1", "eventId": 2, "sector": "E", "price": 45, "available": true },
+  { "id": "E2", "eventId": 2, "sector": "E", "price": 45, "available": false },
+
+  { "id": "X1", "eventId": 3, "sector": "X", "price": 70, "available": true },
+  { "id": "X2", "eventId": 3, "sector": "X", "price": 70, "available": true },
+  { "id": "Y1", "eventId": 3, "sector": "Y", "price": 55, "available": false },
+  { "id": "Y2", "eventId": 3, "sector": "Y", "price": 55, "available": true },
+
+  { "id": "R1", "eventId": 4, "sector": "Ring", "price": 200, "available": false },
+  { "id": "R2", "eventId": 4, "sector": "Ring", "price": 200, "available": true },
+  { "id": "R3", "eventId": 4, "sector": "Ring", "price": 200, "available": true },
+  { "id": "G1", "eventId": 4, "sector": "Gradas", "price": 80, "available": true },
+
+  { "id": "NB1", "eventId": 5, "sector": "Pista", "price": 95, "available": true },
+  { "id": "NB2", "eventId": 5, "sector": "Pista", "price": 95, "available": false },
+  { "id": "NB3", "eventId": 5, "sector": "Grada", "price": 60, "available": true },
+  { "id": "NB4", "eventId": 5, "sector": "Grada", "price": 60, "available": false }
+]

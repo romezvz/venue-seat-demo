@@ -1,0 +1,18 @@
+<div class="p-4">
+  <h2 class="text-xl font-bold mb-4">Selecciona tus asientos</h2>
+  <div class="grid grid-cols-4 gap-4">
+    <button
+      *ngFor="let seat of seats"
+      class="border rounded p-2"
+      [ngClass]="{
+        'bg-green-200': seat.available,
+        'bg-red-300 text-white': !seat.available
+      }"
+      [disabled]="!seat.available"
+      (click)="selectSeat(seat)"
+    >
+      {{ seat.id }}<br />
+      {{ seat.price }} €
+    </button>
+  </div>
+</div>
