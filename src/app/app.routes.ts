@@ -19,6 +19,11 @@ export const routes: Routes = [
       )
   },
   {
+    path: 'resumen',
+    loadComponent: () =>
+      import('./modules/summary/summary.component').then((m) => m.SummaryComponent)
+  },
+  {
     path: '**',
     redirectTo: 'events'
   }
