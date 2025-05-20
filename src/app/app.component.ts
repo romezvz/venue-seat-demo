@@ -4,13 +4,14 @@ import { RouterOutlet } from '@angular/router'
 import { LangService } from '@core/services/lang.service'
 import { ThemeService } from '@core/services/theme.service'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
+import { NavbarComponent } from '@shared/components/navbar/navbar.component'
 
 @Component({
   standalone: true,
   selector: 'rz-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [CommonModule, RouterOutlet, TranslateModule],
+  imports: [CommonModule, RouterOutlet, TranslateModule, NavbarComponent],
   providers: [TranslateService, ThemeService, LangService]
 })
 export class AppComponent {

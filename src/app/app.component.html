@@ -1,28 +1,5 @@
 <div class="grid">
-  <div class="card grid grid-cols-2 items-center gap-4 m-5 bg-white dark:bg-zinc-800">
-    <div class="flex justify-start">
-      <h1 class="m-5 text-zinc-800 dark:text-white">
-        {{ 'app.title' | translate }}
-      </h1>
-    </div>
-
-    <div class="flex justify-end m-5">
-      <button
-        class="cursor-pointer text-zinc-800 dark:text-white mx-3"
-        (click)="toggleTheme()"
-        aria-label="Activar modo claro"
-      >
-        {{ 'app.mode' | translate }}
-      </button>
-      <button
-        class="cursor-pointer text-zinc-800 dark:text-white"
-        (click)="toggleLang()"
-        aria-label="Activar modo claro"
-      >
-        {{ 'app.lang' | translate }}
-      </button>
-    </div>
-  </div>
+  <rz-navbar />
 
   <div class="card flex flex-col justify-center items-center m-5">
     <router-outlet />
