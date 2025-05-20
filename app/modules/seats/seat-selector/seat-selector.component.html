@@ -1,18 +1,46 @@
 <div class="p-4">
   <h2 class="text-xl font-bold mb-4">Selecciona tus asientos</h2>
-  <div class="grid grid-cols-4 gap-4">
+
+  <div class="grid grid-cols-4 gap-3 mb-6">
     <button
       *ngFor="let seat of seats"
-      class="border rounded p-2"
+      class="p-2 border rounded transition"
       [ngClass]="{
         'bg-green-200': seat.available,
-        'bg-red-300 text-white': !seat.available
+        'bg-red-300 text-white': !seat.available,
+        'ring-2 ring-black': selectedIds.includes(seat.id)
       }"
       [disabled]="!seat.available"
-      (click)="selectSeat(seat)"
+      (click)="toggle(seat)"
     >
       {{ seat.id }}<br />
       {{ seat.price }} €
+    </button>
+  </div>
+
+  <div class="p-3 border-t pt-4">
+    <h3 class="text-lg font-semibold mb-2">Resumen</h3>
+
+    <div *ngFor="let entry of selectionKeys()" class="mb-4">
+      <div *ngIf="selection.selections[entry]?.seats?.length">
+        <h3 class="font-bold">Evento: {{ selection.selections[entry].event.name }}</h3>
+        <p><strong>Fecha:</strong> {{ selection.selections[entry].event.date }}</p>
+        <p>
+          <strong>Asientos:</strong>
+          {{ getSelectedSeatIds(entry).join(', ') }}
+        </p>
+        <p>
+          <strong>Total:</strong>
+          {{ selection.getTotal(entry) }} €
+        </p>
+      </div>
+    </div>
+
+    <button
+      class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+      (click)="confirm()"
+    >
+      Confirmar compra
     </button>
   </div>
 </div>
