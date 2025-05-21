@@ -1,17 +1,16 @@
 <div class="p-4">
-  <h2 class="text-xl font-bold mb-4">Selecciona tus asientos</h2>
+  <h2 class="text-xl font-bold mb-4">{{ 'SEATS.TITLE' | translate }}</h2>
 
   <div class="grid grid-cols-4 gap-3 mb-6">
     <button
       *ngFor="let seat of seats"
-      class="p-2 border rounded transition"
+      class="p-2 rounded transition"
       [ngClass]="{
-        'bg-green-200': seat.available,
-        'bg-red-300 text-white': !seat.available,
-        'ring-2 ring-black': selectedIds.includes(seat.id)
+        'bg-green-300 dark:bg-green-400': seat.available,
+        'bg-gray-300 dark:bg-gray-400': !seat.available
       }"
       [disabled]="!seat.available"
-      (click)="toggle(seat)"
+      (click)="toggleSeat(seat)"
     >
       {{ seat.id }}<br />
       {{ seat.price }} €
@@ -19,28 +18,33 @@
   </div>
 
   <div class="p-3 border-t pt-4">
-    <h3 class="text-lg font-semibold mb-2">Resumen</h3>
+    <h3 class="text-lg font-semibold mb-2">{{ 'SEATS.SUMMARY' | translate }}</h3>
 
     <div *ngFor="let entry of selectionKeys()" class="mb-4">
-      <div *ngIf="selection.selections[entry]?.seats?.length">
-        <h3 class="font-bold">Evento: {{ selection.selections[entry].event.name }}</h3>
-        <p><strong>Fecha:</strong> {{ selection.selections[entry].event.date }}</p>
+      <div *ngIf="selectionService.selections[entry]?.seats?.length">
+        <h3 class="font-bold">
+          {{ 'SEATS.EVENT' | translate }}: {{ selectionService.selections[entry].event.name }}
+        </h3>
         <p>
-          <strong>Asientos:</strong>
+          <strong>{{ 'SEATS.DATE' | translate }}:</strong>
+          {{ selectionService.selections[entry].event.date }}
+        </p>
+        <p>
+          <strong>{{ 'SEATS.SEATS' | translate }}:</strong>
           {{ getSelectedSeatIds(entry).join(', ') }}
         </p>
         <p>
-          <strong>Total:</strong>
-          {{ selection.getTotal(entry) }} €
+          <strong>{{ 'SEATS.TOTAL' | translate }}:</strong>
+          {{ selectionService.getTotal(entry) }} €
         </p>
       </div>
     </div>
 
     <button
-      class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-      (click)="confirm()"
+      class="mt-4 bg-zinc-800 dark:bg-white text-white dark:text-zinc-800 px-4 py-2 rounded"
+      (click)="confirmPurchase()"
     >
-      Confirmar compra
+      {{ 'SEATS.CONFIRM' | translate }}
     </button>
   </div>
 </div>

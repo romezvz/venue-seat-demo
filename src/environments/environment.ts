@@ -1,4 +1,6 @@
+import { API_DEV } from '@shared/constants/global.constants'
+
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000'
+  apiUrl: API_DEV
 }

@@ -1,13 +1,15 @@
-<div class="card grid grid-cols-2 items-center gap-4 m-5 bg-white dark:bg-zinc-800">
+<div class="card grid grid-cols-2 items-center gap-4 m-5">
   <div class="flex justify-start">
-    <h1 class="m-5 text-zinc-800 dark:text-white">
-      {{ 'app.title' | translate }}
+    <h1 class="cursor-pointer mx-3" [routerLink]="['/']">
+      {{ 'APP.TITLE' | translate }}
     </h1>
   </div>
 
   <div class="flex justify-end m-5">
     <rz-theme-toggle></rz-theme-toggle>
     <rz-language-switcher></rz-language-switcher>
-    <a [routerLink]="['/resumen']" class="ml-4 underline hover:text-blue-600"> Ver resumen </a>
+    <button class="cursor-pointer mx-3" [routerLink]="['/resumen']">
+      {{ 'APP.SUMMARY' | translate }}
+    </button>
   </div>
 </div>

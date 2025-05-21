@@ -1,10 +1,10 @@
 <div class="p-4">
-  <h2 class="text-xl font-bold mb-4">Próximos eventos</h2>
+  <h2 class="text-xl font-bold mb-4">{{ 'EVENTS.TITLE' | translate }}</h2>
   <ul>
     <li
       onkeypress=""
       *ngFor="let event of events"
-      class="cursor-pointer p-2 hover:bg-gray-100 rounded"
+      class="cursor-pointer p-2 hover:bg-gray-300 dark:hover:bg-gray-500 rounded"
       (click)="goToSeats(event.id)"
     >
       {{ event.name }} – {{ event.date }}
