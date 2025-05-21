@@ -1,30 +1,31 @@
 import { Routes } from '@angular/router'
+import { ROUTES } from '@core/routes/routes'
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'events',
+    redirectTo: ROUTES.EVENTS,
     pathMatch: 'full'
   },
   {
-    path: 'events',
+    path: ROUTES.EVENTS,
     loadComponent: () =>
       import('@modules/events/event-list/event-list.component').then((m) => m.EventListComponent)
   },
   {
-    path: 'seats/:eventId',
+    path: `${ROUTES.SEATS}/:eventId`,
     loadComponent: () =>
       import('@modules/seats/seat-selector/seat-selector.component').then(
         (m) => m.SeatSelectorComponent
       )
   },
   {
-    path: 'resumen',
+    path: ROUTES.RESUMEN,
     loadComponent: () =>
       import('./modules/summary/summary.component').then((m) => m.SummaryComponent)
   },
   {
     path: '**',
-    redirectTo: 'events'
+    redirectTo: ROUTES.EVENTS
   }
 ]

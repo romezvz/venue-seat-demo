@@ -1,7 +1,29 @@
 {
-  "app": {
-    "title": "Hello RomezVz Arriving",
-    "mode": "Mode",
-    "lang": "Language"
+  "APP": {
+    "TITLE": "Events",
+    "MODE": "Mode",
+    "LANG": "Language",
+    "SUMMARY": "Summary"
+  },
+  "EVENTS": {
+    "TITLE": "Upcoming Events"
+  },
+  "SEATS": {
+    "TITLE": "Select your seats",
+    "SUMMARY": "Summary",
+    "EVENT": "Event",
+    "DATE": "Date",
+    "SEATS": "Seats",
+    "TOTAL": "Total",
+    "CONFIRM": "Confirm purchase"
+  },
+  "SUMMARY": {
+    "TITLE": "Selection summary",
+    "EVENT": "Event",
+    "DATE": "Date",
+    "SEATS": "Seats",
+    "TOTAL": "Total",
+    "CONFIRM": "Confirm purchase",
+    "NONE": "No seats selected yet."
   }
 }
